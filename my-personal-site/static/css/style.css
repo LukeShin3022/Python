@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --defaultColor: rgb(140,60,200);
+}
+
+html{
+    scroll-behavior: smooth;
+
+}
+
+body{
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--defaultColor);
+}
+
+@media (min-width: 300px){
+    
+    h1{
+        color: white;
+        font-size: 35px;
+    }
+
+    h2{
+        color: var(--defaultColor);
+        padding-bottom: 15%;
+        text-shadow: 2px 2px lightgray;
+    }
+
+    h3{
+        color: var(--defaultColor);
+    }
+
+    textarea{
+        resize: none;
+        padding: 3%;
+        font-family: 'Manrope', sans-serif;
+        height: 20vh;
+        border: 1px solid darkgray;
+
+    }
+
+    
+    header{
+        display: flex;
+        flex-direction: column;
+        height: 40vh;
+
+    }
+
+    header > article{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        row-gap: 10px;
+    }
+
+    header span{
+        color: white;
+    }
+
+    header aside{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        column-gap: 5px;
+    }
+
+    header > article a{
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        color: var(--defaultColor);
+        text-decoration: none;
+        padding: 2%;
+        background-color: white;
+        font-weight: 600;
+        border: 0px solid none;
+        border-radius: 5px;
+    }
+
+    nav{
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-bottom: 3px solid var(--defaultColor);
+        outline: 1px solid white;
+    }
+
+    nav > ul{
+        display: none;
+    }
+
+    nav img{
+        width: 120px;
+        height: 50px;
+    }
+
+    details{
+        position: relative;
+        width: 46%;
+        padding: 2%;
+    }
+
+    details > ul{
+        position: absolute;
+        background-color: rgba(87, 4, 90, .8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+
+    details li{
+        display: flex;
+    }
+
+    details a{
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 5%;
+    }
+
+    summary{
+        font-size: 25px;
+        color: var(--defaultColor);
+        padding: 5%;
+        width: 90%;
+        text-align: right;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+        
+    }
+
+    main > section{
+        width: 80%;
+        padding: 5%;
+        background-color: white;
+
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    footer figure{
+        padding-top: 10%;
+        padding-bottom: 5%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 15px;
+    }
+
+    footer img{
+        width: 20%;
+        background-color: white;
+        border: 0px solid none;
+        border-radius: 10px;
+    }
+
+    footer > aside{
+        padding-top: 5%;
+        padding-bottom: 10%;
+        width: 100%;
+        text-align: center;
+    }
+
+    footer > aside a{
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        color: var(--defaultColor);
+        text-decoration: none;
+        padding: 2%;
+        background-color: white;
+        font-weight: 600;
+        border: 0px solid none;
+        border-radius: 5px;
+    }
+
+    footer small{
+        color: white;
+    }
+
+    .about p{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .about > article > section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about > article > h3{
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .about img, .project img{
+        width: 100%;
+    }
+
+    .project > article{
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .project figcaption{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project small{
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--defaultColor);
+    }
+
+    .project time{
+        font-size: 14px;
+    }
+
+    .work > article, .edu > article{
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+
+    .language > article{
+        display: flex;
+        flex-direction: column;
+        row-gap: 50px;
+        align-items: center;
+    }
+
+    .language aside{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .language aside > div{
+        width: 100%;
+    }
+
+    .language ul{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    .language li{
+        display: flex;
+        background-color: lightgray;
+    }
+
+    .language p{
+        padding: 2%;
+        text-align: center;
+        color: white;
+    }
+
+    .eng li:nth-child(1) > p{
+        background-color: var(--defaultColor);
+        width: 30%;
+    }
+    .eng li:nth-child(2) > p{
+        background-color: var(--defaultColor);
+        width: 40%;
+    }
+    .eng li:nth-child(3) > p{
+        background-color: var(--defaultColor);
+        width: 60%;
+    }
+    .eng li:nth-child(4) > p{
+        background-color: var(--defaultColor);
+        width: 60%;
+    }
+
+    .kor li:nth-child(1) > p{
+        background-color: var(--defaultColor);
+        width: 90%;
+    }
+    .kor li:nth-child(2) > p{
+        background-color: var(--defaultColor);
+        width: 100%;
+    }
+    .kor li:nth-child(3) > p{
+        background-color: var(--defaultColor);
+        width: 100%;
+    }
+    .kor li:nth-child(4) > p{
+        background-color: var(--defaultColor);
+        width: 90%;
+    }
+    .cont ul > li{
+        display: flex;
+        column-gap: 20px;
+        align-items: center;
+        color: black;
+    }
+    .cont a{
+        color: black;
+        text-decoration: none;
+    }
+
+    [value="Send message"]{
+    background-color: var(--defaultColor);
+    color: white;
+    font-size: 18px;
+    border: 0px solid gray;
+    box-shadow: 4px 4px lightgray;
+    }
+
+
+    @media (min-width: 700px){
+
+        h1{
+            font-size: 55px;
+        }
+
+        h2{
+            font-size: 35px;
+        }
+
+        h3{
+            font-size: 25px;
+        }
+
+        header img{
+            width: 250px;
+            height: 100px;
+        }
+
+        header span{
+            font-size: 25px;
+        }
+
+        header > article a{
+            font-size: 30px;
+            width: 30px;
+            height: 30px;
+        }
+
+        details ul {
+            width: 60%;
+        }
+
+        details a{
+            font-size: 30px;
+        }
+
+        summary{
+            font-size: 50px;
+            color: var(--defaultColor);
+
+        }
+
+        footer > aside > a{
+            font-size: 30px;
+            width: 30px;
+            height: 30px;
+        }
+
+
+        small{
+            font-size: 20px;
+        }
+
+        time{
+            font-size: 20px;
+        }
+
+        textarea, .contact input{
+            font-size: 20px;
+            /* padding: 10%; */
+            border: 1px solid darkgray;
+        }
+
+        .about > article > h3{
+            font-size: 30px;
+        }
+
+        .about p{
+            font-size: 25px;
+        }
+
+        .project small{
+            font-size: 25px;
+        }
+
+        .project time{
+            font-size: 20px;
+        }
+
+        .work p{
+            font-size: 20px;
+
+        }
+
+        .language p{
+            font-size: 20px;
+        }
+
+        .contact > form{
+            row-gap: 40px;
+        }
+
+
+        .contact > form > input:last-child{
+            font-size: 25px;
+        }
+
+
+    }
+
+    @media (min-width: 1000px){
+
+            header {
+                height: 65vh;
+            }
+
+            header > article > h1{
+                font-size: 70px;
+            }
+
+            header > article > span{
+                font-size: 18px;
+            }
+
+            header aside a{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                width: 15px;
+                height: 15px;
+                padding: 1% 1%;
+                font-size: 20px;
+            }
+
+            nav{
+                height: 10vh;
+            }
+            
+            nav > details{
+                display: none;
+            }
+
+            nav > ul{
+                width: 60%;
+                display: flex;
+                column-gap: 25px;
+                align-items: center;
+                justify-content: center;
+            }
+
+            nav li{
+                display: flex;
+            }
+
+            nav a{
+                width: 100%;
+                font-size: 25px;
+                color: var(--defaultColor);
+                text-decoration: none;
+                font-weight: 600;
+                padding: 10% 15% 10% 15%;
+
+            }
+
+            nav a:hover{
+                background-color: var(--defaultColor);
+                color: white;
+                border-radius: 10px;
+            }
+
+            main > section > h2{
+                font-size: 50px;
+                padding-bottom: 5%;
+            }
+
+            footer img{
+                width: 5%;
+            }
+
+            footer figure {
+                padding-top: 2%;
+                padding-bottom: 2%;
+                
+            }
+
+            footer > aside {
+                padding-top: 2%;
+                padding-bottom: 5%;
+            }
+
+            footer aside > a{
+                text-align: center;
+                width: 15px;
+                height: 15px;
+                padding: 1% 1%;
+                font-size: 20px;
+            }
+
+            .about > article{
+                display: flex;
+                column-gap: 50px;
+            }
+
+            .about > article h3{
+                font-size: 30px;
+            }
+            .about > article > section{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .about > article > figure{
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* border: 1px solid red; */
+            }
+
+            .about > article img{
+                width: 100%;
+            }
+
+            .project > article{
+                flex-direction: row;
+                column-gap: 30px;
+            }
+
+            .project img{
+                width: 100%;
+                height: 80%;
+            }
+
+            .edu > article{
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            .language > article{
+                flex-direction: row;
+                column-gap: 50px;
+            }
+
+            .contact input{
+                height: 2vh;
+                padding: 1%;
+            }
+
+            textarea{
+                padding: 1%;
+            }
+
+            #send-bt{
+                width: 20%;
+                height: 6vh;
+                font-size: 20px;
+                border-radius: 5px;
+            }
+
+            #send-bt:hover{
+                transition: .5s;
+                background-color: white;
+                color: var(--defaultColor);
+                border: 1px solid var(--defaultColor);
+            }
+
+            .ani-slide{
+                animation: slide 2s ease-in-out ;
+
+
+            }
+
+            #grow:hover{
+                animation: grow 1s ease-in-out infinite alternate;
+            }
+            
+            @keyframes slide{
+                from{
+                    transform: translateX(-50%);
+                }
+            
+                to{
+                    transform: translateX(0%);
+                    
+                }
+
+            }
+
+            @keyframes grow{
+                from{
+                    transform: scale(1);
+                }
+            
+                to{
+                    transform: scale(1.5);
+                }
+            }
+
+    }
+}
