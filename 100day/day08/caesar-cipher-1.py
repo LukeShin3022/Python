@@ -1,7 +1,8 @@
+from art import logo
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number \n"))
+flag = True
+print(logo)
 
 def encrypt(plain_text, shift_amount):
     cipher_text = ""
@@ -19,7 +20,7 @@ def decrypt(cipher_text, shift_amount):
     for letter in cipher_text:
         position = alphabet.index(letter)
         new_position = position - shift_amount
-        if new_position <= 0:
+        if new_position < 0:
             new_position += len(alphabet)
         decrypt_letter = alphabet[new_position]
         plain_text += decrypt_letter
@@ -40,7 +41,7 @@ def caesar(direction, text, shift_amount):
                 new_position -= len(alphabet)
         elif direction == 'decode':
             new_position = position - shift_amount
-            if new_position <= 0:
+            if new_position < 0:
                 new_position += len(alphabet)
         switch_letter = alphabet[new_position]
         result_text += switch_letter
@@ -50,17 +51,29 @@ def caesar_enhance(direction, text, shift_amount):
     result_text = ""
     if direction == 'decode':
         shift_amount *= -1
-    for letter in text:
-        position = alphabet.index(letter)
-        new_position = position + shift_amount
-        if new_position >= len(alphabet):
-            new_position -= len(alphabet)
-        elif new_position <= 0:
-            new_position += len(alphabet)
-        switch_letter = alphabet[new_position]
-        result_text += switch_letter
+    for char in text:
+        if char in alphabet:
+            position = alphabet.index(char)
+            new_position = position + shift_amount
+            if new_position >= len(alphabet):
+                new_position -= len(alphabet)
+            elif new_position < 0:
+                new_position += len(alphabet)
+            switch_letter = alphabet[new_position]
+            result_text += switch_letter
+        else:
+            result_text += char
     return result_text
 
+while(flag):        
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower()
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number \n"))
     
-
-print(f"The {direction}d text is "+ caesar_enhance(direction, text, shift))
+    shift = shift % 26
+    print(f"The {direction}d text is "+ caesar_enhance(direction, text, shift))
+    
+    answer = input("Type 'y' if you wanna go again. Otherwise type 'n'\n").lower()
+    if answer == 'n':
+        flag = False
+        print("Goodbye!")
